@@ -14,4 +14,9 @@ def semantic_chunk(text):
 
     documents = splitter.create_documents([text])
 
-    return documents
+    chunks = [
+    doc.page_content
+    for doc in documents
+    ]
+
+    return chunks
