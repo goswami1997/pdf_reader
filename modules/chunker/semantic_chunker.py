@@ -3,7 +3,14 @@ from langchain_huggingface import HuggingFaceEmbeddings
 
 
 def semantic_chunk(text):
-
+    """
+    Splits extracted text into semantic chunks. It uses the SemanticChunker
+    from langchain_experimental.text_splitter to create chunks of text based 
+    on semantic similarity. The function returns a list of text chunks.
+    The parameters are as follows:
+    - embeddings: The embeddings to use for semantic similarity 
+    (default is HuggingFaceEmbeddings with model "sentence-transformers/all-MiniLM-L6-v2").
+    """
     embeddings = HuggingFaceEmbeddings(
         model_name="sentence-transformers/all-MiniLM-L6-v2"
     )
